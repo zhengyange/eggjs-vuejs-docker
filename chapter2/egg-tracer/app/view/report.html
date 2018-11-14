@@ -1,0 +1,37 @@
+`<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Tracer</title>
+  <script>
+    const dataRaw = ${JSON.stringify(data)}
+    console.log(dataRaw)
+  </script>
+</head>
+<body>
+  <div id="app">
+    <h1>用户追踪</h1>
+    <ul>
+      <li v-for="row in logs">
+        <span>操作系统：{{row.os}}</span>
+        <span>浏览器：{{row.browser}}</span>
+        <span>设备：{{row.device}}</span>
+        <span>用户名：{{row.username}}</span>
+        <span>IP：{{row.ip}}</span>
+        <span>路径：{{row.path}}</span>
+      </li>
+    </ul>
+  </div>
+  <script src="https://cdn.bootcss.com/vue/2.5.13/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        logs: dataRaw
+      }
+    })
+  </script>
+</body>
+</html>`
